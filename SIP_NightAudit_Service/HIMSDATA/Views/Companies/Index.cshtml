@@ -1,0 +1,185 @@
+﻿@model IEnumerable<HIMSDATA.Models.Company>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Company1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PolicyStartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PolicyEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusUpdateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsCompany)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GroupType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrefixCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactPerson)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExchangeRate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SyncBatchNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SyncBatchNoUpdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SyncBatchDelete)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SyncInsert)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SyncUpdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SyncDelete)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdInscompany)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsePin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShowLimit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LimitPercentage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SyncInsertCounts)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SyncUpdateCounts)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PolicyStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PolicyEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusUpdateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsCompany)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GroupType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrefixCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactPerson)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExchangeRate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SyncBatchNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SyncBatchNoUpdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SyncBatchDelete)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SyncInsert)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SyncUpdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SyncDelete)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdInscompany)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsePin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShowLimit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LimitPercentage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SyncInsertCounts)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SyncUpdateCounts)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="sqlDataSource2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="customSqlQuery2.Sql" xml:space="preserve">
+    <value>SELECT 
+    BH.id,
+    CONCAT(TRIM(G.Firstname), ' ', TRIM(G.Lastname)) AS GuestName,
+	G.Email,
+	G.PhoneNumber,
+    N.name AS Nationality,
+    STUFF(
+        (SELECT ', ' + COALESCE(CAST(BH2.roomRate AS VARCHAR), '')
+         FROM [FrankiesHotel].[dbo].[BillingsHistory] BH2,
+              Guests G2,
+              Rooms R2,
+              Bookings B2
+         WHERE BH2.customerId = G2.id 
+           AND BH2.roomId = R2.id 
+           AND B2.GuestId = G2.id 
+           AND R2.id = B2.RoomId 
+           AND B2.CheckInTime IS NOT NULL 
+           AND B2.CheckOutTime IS NULL 
+           AND N.id = G2.NationalityId 
+           AND G2.id = 3
+           AND BH2.customerBookingId = B2.id 
+           AND C.id = G2.companyId
+           AND BH2.roomRate IS NOT NULL  -- Exclude NULL values
+         ORDER BY 1
+         FOR XML PATH('')), 1, 2, '') AS RoomRates,
+    BH.description,
+    BH.credit,
+    BH.debit,
+    BH.currency,
+	Cast(BH.debit / Cr.rate as decimal(18,2)) as Amount,
+	'USD' AS CurrencySymbol,
+    STUFF(
+        (SELECT DISTINCT ', ' + COALESCE(TRIM(R2.Name), '')
+         FROM [FrankiesHotel].[dbo].[BillingsHistory] BH2,
+              Guests G2,
+              Rooms R2,
+              Bookings B2
+         WHERE BH2.customerId = G2.id 
+           AND BH2.roomId = R2.id 
+           AND B2.GuestId = G2.id 
+           AND R2.id = B2.RoomId 
+           AND B2.CheckInTime IS NOT NULL 
+           AND B2.CheckOutTime IS NULL 
+           AND N.id = G2.NationalityId 
+           AND G2.id = 3
+           AND BH2.customerBookingId = B2.id 
+           AND C.id = G2.companyId
+         ORDER BY 1
+         FOR XML PATH('')), 1, 2, '') AS RoomNames,
+    B.CheckInTime,
+    B.BookEnd,
+    STUFF(
+        (SELECT DISTINCT ', ' + COALESCE(B2.CustomerReceiptNumber, '')
+         FROM [FrankiesHotel].[dbo].[BillingsHistory] BH2,
+              Guests G2,
+              Bookings B2
+         WHERE BH2.customerId = G2.id 
+           AND B2.GuestId = G2.id 
+           AND B2.CustomerReceiptNumber IS NOT NULL 
+           AND B2.CheckInTime IS NOT NULL 
+           AND B2.CheckOutTime IS NULL 
+           AND G2.id = 3
+           AND BH2.customerBookingId = B2.id 
+         ORDER BY 1
+         FOR XML PATH('')), 1, 2, '') AS CustomerReceiptNumbers,
+    C.name AS CompanyName,
+	Bd.CompanyName BusinessName,
+	Bd.BankName,
+	Bd.BranchName,
+	Bd.AccountNumber
+FROM 
+    [FrankiesHotel].[dbo].[BillingsHistory] BH,
+    Guests G,
+    Rooms R,
+    Bookings B,
+    Nationality N,
+    Company C,
+    Currency Cr,
+    BankDetails Bd
+WHERE 
+    BH.customerId = G.id 
+    AND BH.roomId = R.id 
+    AND B.GuestId = G.id 
+    AND R.id = B.RoomId 
+    AND B.CheckInTime IS NOT NULL 
+    AND B.CheckOutTime IS NULL 
+    AND N.id = G.NationalityId 
+    AND G.id = @guestId
+    AND BH.customerBookingId = B.id 
+    AND C.id = G.companyId
+	and Cr.Symbol = BH.currency
+GROUP BY 
+    BH.id, G.Firstname, G.Lastname,G.Email,G.PhoneNumber, BH.roomRate, BH.description, BH.credit, BH.debit, BH.currency, N.name, B.CheckInTime, B.BookEnd, C.name,N.id,C.id,Cr.rate,Bd.CompanyName,
+	Bd.BankName,
+	Bd.BranchName,
+	Bd.AccountNumber;</value>
+  </data>
+  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iaWQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJHdWVzdE5hbWUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRW1haWwiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUGhvbmVOdW1iZXIiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTmF0aW9uYWxpdHkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUm9vbVJhdGVzIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9ImRlc2NyaXB0aW9uIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9ImNyZWRpdCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iZGViaXQiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9ImN1cnJlbmN5IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFtb3VudCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iQ3VycmVuY3lTeW1ib2wiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUm9vbU5hbWVzIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkNoZWNrSW5UaW1lIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iQm9va0VuZCIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IkN1c3RvbWVyUmVjZWlwdE51bWJlcnMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ29tcGFueU5hbWUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQnVzaW5lc3NOYW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkJhbmtOYW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkJyYW5jaE5hbWUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQWNjb3VudE51bWJlciIgVHlwZT0iSW50NjQiIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>
+  </data>
+  <data name="xrLabel2.Text" xml:space="preserve">
+    <value>NOTICE TO GUESTS: This property is private owned, and the management reserves the right to refuse service to anyone.
+Management will not be responsible for accidents or injury to guests or for loss of money, jewelry, or valuables of any kind.
+Management will not be responsible for any item left in the room.</value>
+  </data>
+</root>

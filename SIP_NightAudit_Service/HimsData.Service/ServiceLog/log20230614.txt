@@ -1,0 +1,35 @@
+2023-06-14 15:48:53.351 +00:00 [INF] Worker Service has started
+2023-06-14 15:51:38.580 +00:00 [INF] The service has started at: "2023-06-14T15:51:38.5747399+00:00"
+2023-06-14 15:51:42.909 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.928 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.930 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.932 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.934 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.936 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.938 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.940 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.942 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.944 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.946 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.948 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.950 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.952 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.954 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.956 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.958 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.960 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.962 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.964 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.966 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.968 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.970 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.972 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.974 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:42.977 +00:00 [INF] New Clients loaded
+2023-06-14 15:51:51.284 +00:00 [ERR] Error getting Query Diagnosis
+2023-06-14 15:51:58.591 +00:00 [ERR] Fail to load Diagnosis
+2023-06-14 15:55:20.019 +00:00 [INF] New Treatment added
+2023-06-14 15:55:27.957 +00:00 [INF] New Treatment added
+2023-06-14 15:55:36.242 +00:00 [INF] New Treatment added
+2023-06-14 15:55:46.483 +00:00 [INF] New Treatment added
+2023-06-14 15:56:00.592 +00:00 [INF] New Treatment added

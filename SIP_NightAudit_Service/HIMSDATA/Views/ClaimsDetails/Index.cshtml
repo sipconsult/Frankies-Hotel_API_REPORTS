@@ -1,0 +1,755 @@
+﻿@model IEnumerable<HIMSDATA.Models.ClaimsDetail>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ServerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BatchNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClaimType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeOfVisit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SyncBatchNoUpdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SyncBatchDelete)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SyncInsert)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SyncUpdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SyncDelete)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceCurrency)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.CurrencyRateDate)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.CurrencyUsdRate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrencyOriginalRate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClaimsDetailsId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InvoiceNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClaimTypeRe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiscPercent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiscAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CoPaymentPercent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CoPaymentAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NatureofvisitLimit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeofvisitLimit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Visittype)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceSpeciality)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsDisputed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdateDeleteStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuditUpdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProviderDataId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsCompany)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProviderId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProviderName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProviderIdMaster)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployerCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProcessClaimNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProviderRefNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AttendingOfficer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Diagnosis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiagnosisCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IcdCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EyeOptical)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Toothnos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeOfVisit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NatureOfVisit)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.DateOfConsultation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfActualConsultation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfAdmission)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfDischarge)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.ProviderItemId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsItemCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuthorizationRequired)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuthorizationCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemService)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemServiceType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemClass)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemDaysDiff)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Qty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyAwarded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitPriceAwarded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyFinance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitPriceFinance)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.DateAddedShort)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Dose)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DosageForm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Frequency)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoOfDays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Awarded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActionStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Supplied)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValidationKey)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValidationPin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServerPushStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubmittedStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RxMemberId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SmsSent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApprovedQueryStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QueryStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DelStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProviderIdDataFor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProviderIdDataForText)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DecisionStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DecisionReason)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DecisionReasonOther)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuditStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RxItemName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RxBrandName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RxCartegory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RxPrescriptionName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FinanceAuditStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuditUserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuditedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PregnancyStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PregnancyWeeks)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.PregnancyExpectedDelivery)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.FinanceDecisionStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FinanceDecisionReason)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FinanceDecisionReasonOther)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FinancialStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProviderNameDataFor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReferToAuditor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClaimType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TopupAmt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApproveBalance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BatchNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FinanceAuditUserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FinanceAuditedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SyncInsertCounts)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SyncUpdateCounts)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingNo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReferralNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdateStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdInscompany)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SyncBatchNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SyncBatchNoUpdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SyncBatchDelete)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SyncInsert)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SyncUpdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SyncDelete)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceCurrency)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.CurrencyRateDate)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrencyUsdRate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrencyOriginalRate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClaimsDetailsId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvoiceNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClaimTypeRe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiscPercent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiscAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CoPaymentPercent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CoPaymentAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NatureofvisitLimit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeofvisitLimit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Visittype)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceSpeciality)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDisputed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdateDeleteStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuditUpdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProviderDataId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsCompany)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProviderId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProviderName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProviderIdMaster)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployerCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProcessClaimNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProviderRefNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AttendingOfficer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diagnosis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiagnosisCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IcdCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EyeOptical)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Toothnos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeOfVisit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NatureOfVisit)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.DateOfConsultation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfActualConsultation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfAdmission)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfDischarge)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.ProviderItemId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsItemCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuthorizationRequired)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuthorizationCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemService)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemServiceType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemClass)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemDaysDiff)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyAwarded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitPriceAwarded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyFinance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitPriceFinance)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.DateAddedShort)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Dose)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DosageForm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Frequency)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoOfDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Awarded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActionStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Supplied)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValidationKey)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValidationPin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServerPushStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubmittedStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RxMemberId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SmsSent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApprovedQueryStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QueryStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DelStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProviderIdDataFor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProviderIdDataForText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DecisionStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DecisionReason)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DecisionReasonOther)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuditStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RxItemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RxBrandName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RxCartegory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RxPrescriptionName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinanceAuditStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuditUserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuditedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PregnancyStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PregnancyWeeks)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.PregnancyExpectedDelivery)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.FinanceDecisionStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinanceDecisionReason)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinanceDecisionReasonOther)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinancialStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProviderNameDataFor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReferToAuditor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClaimType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TopupAmt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApproveBalance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BatchNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinanceAuditUserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinanceAuditedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SyncInsertCounts)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SyncUpdateCounts)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingNo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

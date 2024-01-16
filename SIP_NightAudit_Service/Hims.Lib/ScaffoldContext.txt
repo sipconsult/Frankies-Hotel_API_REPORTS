@@ -1,0 +1,5 @@
+﻿Scaffold-DbContext -Connection "Server=localhost;Database=rxdb;User Id=root; password=Admin@123;" -Provider MySql.EntityFrameworkCore -OutputDir RxModels -context RxDBContext -Project Hims.Lib -force
+
+Scaffold-DbContext -Connection "Server=localhost;Database=rxdb;User Id=root; password=password;" -Provider MySql.EntityFrameworkCore -OutputDir RxModels -context RxDBContext  -force
+
+Scaffold-DbContext -Connection "Server=DESKTOP-ROVQU4A;Database=HIMSApex;User Id=sa; password=password01;" -Provider Microsoft.EntityFrameworkCore.SqlServer -OutputDir HimsModels -context HimsDBContext  -force

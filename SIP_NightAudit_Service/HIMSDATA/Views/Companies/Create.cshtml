@@ -1,0 +1,158 @@
+﻿@model HIMSDATA.Models.Company
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Company</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Company1" class="control-label"></label>
+                <input asp-for="Company1" class="form-control" />
+                <span asp-validation-for="Company1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyId" class="control-label"></label>
+                <input asp-for="CompanyId" class="form-control" />
+                <span asp-validation-for="CompanyId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyCode" class="control-label"></label>
+                <input asp-for="CompanyCode" class="form-control" />
+                <span asp-validation-for="CompanyCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PolicyStartDate" class="control-label"></label>
+                <input asp-for="PolicyStartDate" class="form-control" />
+                <span asp-validation-for="PolicyStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PolicyEndDate" class="control-label"></label>
+                <input asp-for="PolicyEndDate" class="form-control" />
+                <span asp-validation-for="PolicyEndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StatusUpdateTime" class="control-label"></label>
+                <input asp-for="StatusUpdateTime" class="form-control" />
+                <span asp-validation-for="StatusUpdateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InsCompany" class="control-label"></label>
+                <input asp-for="InsCompany" class="form-control" />
+                <span asp-validation-for="InsCompany" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyType" class="control-label"></label>
+                <input asp-for="CompanyType" class="form-control" />
+                <span asp-validation-for="CompanyType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GroupType" class="control-label"></label>
+                <input asp-for="GroupType" class="form-control" />
+                <span asp-validation-for="GroupType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrefixCode" class="control-label"></label>
+                <input asp-for="PrefixCode" class="form-control" />
+                <span asp-validation-for="PrefixCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContactPerson" class="control-label"></label>
+                <input asp-for="ContactPerson" class="form-control" />
+                <span asp-validation-for="ContactPerson" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContactEmail" class="control-label"></label>
+                <input asp-for="ContactEmail" class="form-control" />
+                <span asp-validation-for="ContactEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyStatus" class="control-label"></label>
+                <input asp-for="CompanyStatus" class="form-control" />
+                <span asp-validation-for="CompanyStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExchangeRate" class="control-label"></label>
+                <input asp-for="ExchangeRate" class="form-control" />
+                <span asp-validation-for="ExchangeRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SyncBatchNo" class="control-label"></label>
+                <input asp-for="SyncBatchNo" class="form-control" />
+                <span asp-validation-for="SyncBatchNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SyncBatchNoUpdate" class="control-label"></label>
+                <input asp-for="SyncBatchNoUpdate" class="form-control" />
+                <span asp-validation-for="SyncBatchNoUpdate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SyncBatchDelete" class="control-label"></label>
+                <input asp-for="SyncBatchDelete" class="form-control" />
+                <span asp-validation-for="SyncBatchDelete" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SyncInsert" class="control-label"></label>
+                <input asp-for="SyncInsert" class="form-control" />
+                <span asp-validation-for="SyncInsert" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SyncUpdate" class="control-label"></label>
+                <input asp-for="SyncUpdate" class="form-control" />
+                <span asp-validation-for="SyncUpdate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SyncDelete" class="control-label"></label>
+                <input asp-for="SyncDelete" class="form-control" />
+                <span asp-validation-for="SyncDelete" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdInscompany" class="control-label"></label>
+                <input asp-for="IdInscompany" class="form-control" />
+                <span asp-validation-for="IdInscompany" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsePin" class="control-label"></label>
+                <input asp-for="UsePin" class="form-control" />
+                <span asp-validation-for="UsePin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShowLimit" class="control-label"></label>
+                <input asp-for="ShowLimit" class="form-control" />
+                <span asp-validation-for="ShowLimit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LimitPercentage" class="control-label"></label>
+                <input asp-for="LimitPercentage" class="form-control" />
+                <span asp-validation-for="LimitPercentage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SyncInsertCounts" class="control-label"></label>
+                <input asp-for="SyncInsertCounts" class="form-control" />
+                <span asp-validation-for="SyncInsertCounts" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SyncUpdateCounts" class="control-label"></label>
+                <input asp-for="SyncUpdateCounts" class="form-control" />
+                <span asp-validation-for="SyncUpdateCounts" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

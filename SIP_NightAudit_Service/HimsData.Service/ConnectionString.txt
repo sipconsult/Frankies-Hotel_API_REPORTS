@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext 'Server=173.248.129.77,1439; Database=FrankiesHotel; User ID=sa; Password=Pa$$w0rd@21; MultipleActiveResultSets=true' Microsoft.EntityFrameworkCore.SqlServer -ContextDir ServiceModels -OutputDir DB_Models   -force
