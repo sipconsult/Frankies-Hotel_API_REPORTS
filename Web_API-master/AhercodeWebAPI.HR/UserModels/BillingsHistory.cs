@@ -22,6 +22,8 @@ namespace AhercodeWebAPI.HR.UserModels
         public string Notes { get; set; }
         public string ReceiptNumber { get; set; }
         public decimal? RoomRate { get; set; }
+        public decimal? ActualRoomRate { get; set; }
+        public int? CreatedBy { get; set; }
 
         public virtual Company Company { get; set; }
         public virtual Guest Customer { get; set; }

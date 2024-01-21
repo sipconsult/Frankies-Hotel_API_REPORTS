@@ -17,6 +17,7 @@ namespace AhercodeWebAPI.HR.UserModels
         }
 
         public virtual DbSet<AuditTrail> AuditTrails { get; set; }
+        public virtual DbSet<BankDetail> BankDetails { get; set; }
         public virtual DbSet<Billing> Billings { get; set; }
         public virtual DbSet<BillingsHistory> BillingsHistories { get; set; }
         public virtual DbSet<Booking> Bookings { get; set; }
@@ -28,6 +29,7 @@ namespace AhercodeWebAPI.HR.UserModels
         public virtual DbSet<Nationality> Nationalities { get; set; }
         public virtual DbSet<NightAudit> NightAudits { get; set; }
         public virtual DbSet<Note> Notes { get; set; }
+        public virtual DbSet<Notice> Notices { get; set; }
         public virtual DbSet<PaymentMethod> PaymentMethods { get; set; }
         public virtual DbSet<PaymentNote> PaymentNotes { get; set; }
         public virtual DbSet<Room> Rooms { get; set; }
@@ -36,6 +38,7 @@ namespace AhercodeWebAPI.HR.UserModels
         public virtual DbSet<ServiceCategory> ServiceCategories { get; set; }
         public virtual DbSet<ServiceDetail> ServiceDetails { get; set; }
         public virtual DbSet<TaxTable> TaxTables { get; set; }
+        public virtual DbSet<ThankYouMessage> ThankYouMessages { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -63,11 +66,26 @@ namespace AhercodeWebAPI.HR.UserModels
                 entity.Property(e => e.UserId).HasColumnName("userId");
             });
 
+            modelBuilder.Entity<BankDetail>(entity =>
+            {
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.BankName).HasMaxLength(100);
+
+                entity.Property(e => e.BranchName).HasMaxLength(100);
+
+                entity.Property(e => e.CompanyName).HasMaxLength(100);
+            });
+
             modelBuilder.Entity<Billing>(entity =>
             {
                 entity.Property(e => e.Id).HasColumnName("id");
 
+                entity.Property(e => e.ActualRoomRate).HasColumnType("decimal(18, 2)");
+
                 entity.Property(e => e.CompanyId).HasColumnName("companyId");
+
+                entity.Property(e => e.CreatedBy).HasColumnName("createdBy");
 
                 entity.Property(e => e.Credit)
                     .HasColumnType("decimal(18, 2)")
@@ -140,7 +158,11 @@ namespace AhercodeWebAPI.HR.UserModels
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
+                entity.Property(e => e.ActualRoomRate).HasColumnType("decimal(18, 2)");
+
                 entity.Property(e => e.CompanyId).HasColumnName("companyId");
+
+                entity.Property(e => e.CreatedBy).HasColumnName("createdBy");
 
                 entity.Property(e => e.Credit)
                     .HasColumnType("decimal(18, 2)")
@@ -420,6 +442,18 @@ namespace AhercodeWebAPI.HR.UserModels
                     .HasConstraintName("FK_Notes_Guests");
             });
 
+            modelBuilder.Entity<Notice>(entity =>
+            {
+                entity.ToTable("Notice");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(255)
+                    .IsUnicode(false)
+                    .HasColumnName("name");
+            });
+
             modelBuilder.Entity<PaymentMethod>(entity =>
             {
                 entity.ToTable("PaymentMethod");
@@ -543,6 +577,18 @@ namespace AhercodeWebAPI.HR.UserModels
                 entity.Property(e => e.Rate)
                     .HasColumnType("decimal(18, 2)")
                     .HasColumnName("rate");
+            });
+
+            modelBuilder.Entity<ThankYouMessage>(entity =>
+            {
+                entity.ToTable("ThankYouMessage");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(255)
+                    .IsUnicode(false)
+                    .HasColumnName("name");
             });
 
             OnModelCreatingPartial(modelBuilder);

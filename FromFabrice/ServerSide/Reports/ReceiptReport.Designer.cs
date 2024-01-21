@@ -236,12 +236,13 @@
             this.label7.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
             this.label7.LocationFloat = new DevExpress.Utils.PointFloat(247.2534F, 73.12498F);
+            this.label7.Multiline = true;
             this.label7.Name = "label7";
             this.label7.SizeF = new System.Drawing.SizeF(289.0447F, 26.87502F);
             this.label7.StylePriority.UseBorders = false;
             this.label7.StylePriority.UseFont = false;
             this.label7.StylePriority.UseTextAlignment = false;
-            this.label7.Text = "Receipt";
+            this.label7.Text = "Invoice";
             this.label7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // BottomMargin

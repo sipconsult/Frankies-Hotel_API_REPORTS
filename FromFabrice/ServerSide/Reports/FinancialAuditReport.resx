@@ -117,111 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="sqlDataSource2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
   <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="customSqlQuery2.Sql" xml:space="preserve">
-    <value>SELECT 
-    BH.id,
-    CONCAT(TRIM(G.Firstname), ' ', TRIM(G.Lastname)) AS GuestName,
-	G.Email,
-	G.PhoneNumber,
-    N.name AS Nationality,
-    STUFF(
-        (SELECT ', ' + COALESCE(CAST(BH2.roomRate AS VARCHAR), '')
-         FROM [FrankiesHotel].[dbo].[BillingsHistory] BH2,
-              Guests G2,
-              Rooms R2,
-              Bookings B2
-         WHERE BH2.customerId = G2.id 
-           AND BH2.roomId = R2.id 
-           AND B2.GuestId = G2.id 
-           AND R2.id = B2.RoomId 
-           AND B2.CheckInTime IS NOT NULL 
-           AND B2.CheckOutTime IS NULL 
-		   AND BH2.roomRate IS NOT NULL  -- Exclude NULL values
-           AND G2.id = @guestId
-           AND N.id = G2.NationalityId 
-         ORDER BY 1
-         FOR XML PATH('')), 1, 2, '') AS RoomRates,
-    BH.description,
-    BH.credit,
-    BH.debit,
-    BH.currency,
-	Cast(BH.debit / Cr.rate as decimal(18,2)) as Amount,
-	'USD' AS CurrencySymbol,
-    STUFF(
-        (SELECT DISTINCT ', ' + COALESCE(TRIM(R2.Name), '')
-         FROM [FrankiesHotel].[dbo].[BillingsHistory] BH2,
-              Guests G2,
-              Rooms R2,
-              Bookings B2
-         WHERE BH2.customerId = G2.id 
-           AND BH2.roomId = R2.id 
-           AND B2.GuestId = G2.id 
-           AND R2.id = B2.RoomId 
-           AND B2.CheckInTime IS NOT NULL 
-           AND B2.CheckOutTime IS NULL 
-           AND G2.id = @guestId
-           AND BH2.customerBookingId = B2.id 
-           AND N.id = G2.NationalityId 
-         ORDER BY 1
-         FOR XML PATH('')), 1, 2, '') AS RoomNames,
-    B.CheckInTime,
-    B.BookEnd,
-    STUFF(
-        (SELECT DISTINCT ', ' + COALESCE(B2.CustomerReceiptNumber, '')
-         FROM [FrankiesHotel].[dbo].[BillingsHistory] BH2,
-              Guests G2,
-              Bookings B2
-         WHERE BH2.customerId = G2.id 
-           AND B2.GuestId = G2.id 
-           AND B2.CustomerReceiptNumber IS NOT NULL 
-           AND B2.CheckInTime IS NOT NULL 
-           AND B2.CheckOutTime IS NULL 
-           AND G2.id = @guestId
-           AND BH2.customerBookingId = B2.id 
-         ORDER BY 1
-         FOR XML PATH('')), 1, 2, '') AS CustomerReceiptNumbers,
-	Bd.CompanyName BusinessName,
-	Bd.BankName,
-	Bd.BranchName,
-	Bd.AccountNumber
-FROM 
-    [FrankiesHotel].[dbo].[BillingsHistory] BH,
-    Guests G,
-    Rooms R,
-    Bookings B,
-    Nationality N,
-    Company C,
-    Currency Cr,
-    BankDetails Bd
-WHERE 
-    BH.customerId = G.id 
-    AND BH.roomId = R.id 
-    AND B.GuestId = G.id 
-    AND R.id = B.RoomId 
-    AND B.CheckInTime IS NOT NULL 
-    AND B.CheckOutTime IS NULL 
-    AND N.id = G.NationalityId 
-    AND G.id = @guestId
-    AND BH.customerBookingId = B.id 
-	and Cr.Symbol = BH.currency
-GROUP BY 
-    BH.id, G.Firstname, G.Lastname,G.Email,G.PhoneNumber, BH.roomRate, BH.description, BH.credit, BH.debit, BH.currency, N.name, B.CheckInTime, B.BookEnd, N.id,Cr.rate,Bd.CompanyName,
-	Bd.BankName,
-	Bd.BranchName,
-	Bd.AccountNumber;</value>
+  <data name="customSqlQuery1.Sql" xml:space="preserve">
+    <value>select B.id,CONCAT(TRIM(G.firstname),' ',G.lastname) as guest,R.name, B.CheckInTime,B.CheckOutTime,B.Price as agreedRoomRate,Rt.Price actualRoomRate,
+  BH.paymentMethod,
+  BH.credit/C.rate as AmountPaid,  (select sum(BH2.debit/C2.rate)
+  from 
+  BillingsHistory BH2, 
+  Currency C2
+  where BH2.customerId=G.id and C2.symbol=BH2.currency and BH2.customerBookingId=B.id)
+	 as BillingAmount,
+  B.CustomerReceiptNumber
+  from 
+  Bookings B,
+  Guests G,
+  Rooms R,
+  RoomType Rt,
+  BillingsHistory BH,
+  Currency C
+  where (isCancelled is null or isCancelled=0) and CheckInTime is not null
+  and R.id=B.roomId and R.typeId = Rt.id
+  and G.id=B.guestId 
+  and B.CheckInTime between @startDate and @endDate
+  and BH.timestamp between @startDate and @endDate
+  and BH.customerId = G.id
+  and BH.isPayment=1
+  and C.symbol = BH.currency
+  group by B.id,G.Firstname,G.Lastname,R.name,B.CheckInTime,B.CheckOutTime,B.Price,Rt.Price,BH.paymentMethod,BH.credit,G.id,B.CustomerReceiptNumber,C.rate</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iaWQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJHdWVzdE5hbWUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRW1haWwiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUGhvbmVOdW1iZXIiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTmF0aW9uYWxpdHkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUm9vbVJhdGVzIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9ImRlc2NyaXB0aW9uIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9ImNyZWRpdCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iZGViaXQiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9ImN1cnJlbmN5IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFtb3VudCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iQ3VycmVuY3lTeW1ib2wiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUm9vbU5hbWVzIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkNoZWNrSW5UaW1lIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iQm9va0VuZCIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IkN1c3RvbWVyUmVjZWlwdE51bWJlcnMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQnVzaW5lc3NOYW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkJhbmtOYW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkJyYW5jaE5hbWUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQWNjb3VudE51bWJlciIgVHlwZT0iSW50NjQiIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>
-  </data>
-  <data name="xrLabel2.Text" xml:space="preserve">
-    <value>NOTICE TO GUESTS: This property is private owned, and the management reserves the right to refuse service to anyone.
-Management will not be responsible for accidents or injury to guests or for loss of money, jewelry, or valuables of any kind.
-Management will not be responsible for any item left in the room.</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iaWQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJndWVzdCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJuYW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkNoZWNrSW5UaW1lIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iQ2hlY2tPdXRUaW1lIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iYWdyZWVkUm9vbVJhdGUiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9ImFjdHVhbFJvb21SYXRlIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJwYXltZW50TWV0aG9kIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFtb3VudFBhaWQiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IkJpbGxpbmdBbW91bnQiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IkN1c3RvbWVyUmVjZWlwdE51bWJlciIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
   </data>
 </root>

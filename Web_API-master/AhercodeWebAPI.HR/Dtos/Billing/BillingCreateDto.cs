@@ -16,5 +16,7 @@ namespace AhercodeWebAPI.HR.Dtos.Billing
         public string Notes { get; set; }
         public string? ReceiptNumber { get; set; }
         public DateTime? timestamp { get; set; }
+        public decimal? ActualRoomRate { get; set; }
+        public int? CreatedBy { get; set; }
     }
 }
